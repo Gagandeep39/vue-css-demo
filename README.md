@@ -2,8 +2,9 @@
 
 - [Styling](#styling)
   - [Data Binding - Styles](#data-binding---styles)
-  - [Data Binding - Classes](#data-binding---classes)
-  - [Data Binding - Classes - 2](#data-binding---classes---2)
+  - [CSS - Classes](#css---classes)
+  - [CSS - Classes - 2](#css---classes---2)
+  - [CSS - Java scriptbased](#css---java-scriptbased)
 
 ## Data Binding - Styles
 
@@ -38,7 +39,7 @@ const app = Vue.createApp({
 app.mount('#styling');
 ```
 
-## Data Binding - Classes
+## CSS - Classes
 
 - `v-bind:style` or `:style`
 - Uses camelcase for css attributes
@@ -50,7 +51,7 @@ app.mount('#styling');
 ></div>
 ```
 
-## Data Binding - Classes - 2
+## CSS - Classes - 2
 
 - Here `demo` class is alwas active
 - `active` class ifs active when `boxASelected` is true
@@ -61,4 +62,22 @@ app.mount('#styling');
   @click="boxSelected('A')"
   :class="{ demo: true, active: boxASelected }"
 ></div>
+```
+
+## CSS - Java scriptbased
+
+- Classes are provided dynamically using javascript
+
+```html
+<div @click="boxSelected('A')" class="demo" :class="boxAClasses"></div>
+```
+
+```js
+...
+computed: {
+    boxAClasses() {
+      return {active: this.boxASelected}
+    }
+},
+...
 ```
