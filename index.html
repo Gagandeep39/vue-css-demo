@@ -24,20 +24,15 @@
         :style="{borderColor: boxASelected ? 'red' : '#ccc'}"
       ></div> -->
       <!-- Syntax 2 -->
-      <div
-        @click="boxSelected('A')"
-        class="demo"
-        :class="boxAClasses"
-      ></div>
+      <div @click="boxSelected('A')" class="demo" :class="boxAClasses"></div>
       <div
         class="demo"
         @click="boxSelected('B')"
         :class="{ active: boxBSelected }"
       ></div>
       <div
-        class="demo"
         @click="boxSelected('C')"
-        :class="{ active: boxCSelected }"
+        :class="['demo', { active: boxCSelected }]"
       ></div>
     </section>
   </body>

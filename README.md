@@ -4,7 +4,8 @@
   - [Data Binding - Styles](#data-binding---styles)
   - [CSS - Classes](#css---classes)
   - [CSS - Classes - 2](#css---classes---2)
-  - [CSS - Java scriptbased](#css---java-scriptbased)
+  - [CSS - Java script based](#css---java-script-based)
+  - [CSS - Class Array](#css---class-array)
 
 ## Data Binding - Styles
 
@@ -64,7 +65,7 @@ app.mount('#styling');
 ></div>
 ```
 
-## CSS - Java scriptbased
+## CSS - Java script based
 
 - Classes are provided dynamically using javascript
 
@@ -80,4 +81,15 @@ computed: {
     }
 },
 ...
+```
+
+## CSS - Class Array
+
+- Providing an array of classes
+
+```html
+<div
+  @click="boxSelected('A')"
+  :class="['demo', { active: boxBSelected }]"
+></div>
 ```
